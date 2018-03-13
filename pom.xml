@@ -24,7 +24,7 @@
 						<properties>
 						    <cargo.remote.username>admin</cargo.remote.username>
 						    <cargo.remote.password>admin</cargo.remote.password>
-						    <cargo.tomcat.manager.url>http://localhost:8080/manager/text
+						    <cargo.tomcat.manager.url>http://54.213.247.82:9999/manager/text
 						      </cargo.tomcat.manager.url>
 						</properties>
 				    	</configuration>
