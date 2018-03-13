@@ -7,7 +7,21 @@
 	<packaging>war</packaging>
 	<name>Hello World Web Application Repository</name>
 	<description>Simplest possible Java Webapp</description>
-
+	<configuration>
+    <container>
+        <containerId>tomcat8x</containerId>
+        <type>remote</type>
+    </container>
+    <configuration>
+        <type>runtime</type>
+        <properties>
+            <cargo.remote.username>admin</cargo.remote.username>
+            <cargo.remote.password>admin</cargo.remote.password>
+            <cargo.tomcat.manager.url>http://localhost:8080/manager/text
+              </cargo.tomcat.manager.url>
+        </properties>
+    </configuration>
+</configuration>
 	<build>
 		<plugins>
 			<plugin>
