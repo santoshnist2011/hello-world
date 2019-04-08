@@ -16,7 +16,7 @@ node {
      echo "hello"
     }
     stage('Docker_Build') {
-      echo "ddd"
+      sh 'docker build -t mvn-app --no-cache .'
     }
    }
   catch (err) {
