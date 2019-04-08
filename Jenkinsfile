@@ -9,7 +9,7 @@ node {
       sh 'printenv'
     }
     stage('Maven') {
-      sh 'mvn clen '
+      sh 'mvn clean '
     }
     stage('run test') {  
      echo "hello"
