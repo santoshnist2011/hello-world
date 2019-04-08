@@ -17,7 +17,7 @@ node {
      sh ' mvn package sonar:sonar -Dsonar.host.url=http://35.154.234.38:9000'
     }
     stage('Docker_Build') {
-      sh ' suod docker build -t mvn-app --no-cache .'
+      sh ' sudo docker build -t mvn-app --no-cache .'
     }
     stage('Deploy') {
       sh ' docker run -d -p 8888:8888 mvn-app mvn-app'
