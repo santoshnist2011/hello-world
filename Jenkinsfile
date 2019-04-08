@@ -1,3 +1,5 @@
+pipeline {
+  agent {
 node {
   try {
     stage('Checkout') {
@@ -35,5 +37,5 @@ node {
     throw err
   }
 }
-
-
+}
+}
