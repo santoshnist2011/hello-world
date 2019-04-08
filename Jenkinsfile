@@ -1,15 +1,39 @@
-pipeline {
-  agent {
-    node {
-      label 'node1'
+node {
+  try {
+    stage('Checkout') {
+      checkout scm
     }
-
+    stage('Environment') {
+      sh 'git --version'
+      echo "Branch: ${env.BRANCH_NAME}"
+      sh 'docker -v'
+      sh 'printenv'
+    }
+    stage('Build Maven App')
+    {
+      build 'mavne' 
+    }
+    #stage('Build Docker Maven App'){
+     # sh 'sudo docker build -t react-test -f Dockerfile.test --no-cache . '
+    #}
+    #stage('Docker test'){
+     # sh 'sudo docker run --rm react-test'
+    #}
+    #stage('Clean Docker test'){
+      sh 'sudo docker rmi react-test'
+    #}
+    #stage('Deploy'){
+     # if(env.BRANCH_NAME == 'master'){
+      #  sh 'sudo docker build -t react-app --no-cache .'
+       # sh 'sudo docker tag react-app localhost:5000/react-app'
+       # sh 'sudo docker push localhost:5000/react-app'
+       # sh 'sudo docker rmi -f react-app localhost:5000/react-app'
+      #}
+    #}
   }
-  stages {
-    stage('stage1') {
-      steps {
-        build 'mavne'
-      }
-    }
+  catch (err) {
+    throw err
   }
 }
+
+
