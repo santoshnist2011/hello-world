@@ -8,15 +8,14 @@ node {
       echo "Branch: ${env.BRANCH_NAME}"
       sh 'printenv'
     }
-    stage('npm instal'){
-      sh 'npm install'
-      sh  'npm audit --fix
+    stage('Maven ){
+      sh 'mvn clen '
     }
     stage('run test'){
-     sh 'npm run test -- --coverage'
+     echo "hello"
     }
     stage('Docker_Build'){
-      sh 'docker build -t react-app --no-cache .'
+      echo "ddd"
     }
    }
   catch (err) {
