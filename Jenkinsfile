@@ -10,6 +10,7 @@ node {
     }
     stage('Maven') {
       sh 'mvn clean '
+      sh 'sudo cp /opt/bitnami/apps/jenkins/jenkins_home/workspace/test_master/dist/hello-world.war /home/bitnami/hello-world/
     }
     stage('run test') {  
      echo "hello"
