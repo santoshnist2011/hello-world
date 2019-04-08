@@ -13,8 +13,8 @@ node {
       sh 'cp /opt/bitnami/apps/jenkins/jenkins_home/workspace/HelloWorld/dist/hello-world.war /home/bitnami/hello-world/'
     }
     stage('run test') {  
-     sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=false'
-     sh 'sonar:sonar -sonar.host.url=http://35.154.234.38:9000'
+     sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent test'
+     sh ' mvn package sonar:sonar -Dsonar.host.url=http://35.154.234.38:9000'
     }
     stage('Docker_Build') {
       sh ' docker build -t mvn-app --no-cache .'
