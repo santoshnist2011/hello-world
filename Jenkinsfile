@@ -16,7 +16,10 @@ node {
      echo "hello"
     }
     stage('Docker_Build') {
-      sh 'docker build -t mvn-app --no-cache .'
+      sh 'sudo docker build -t mvn-app --no-cache .'
+    }
+    stage('Deploy') {
+      sh 'sudo docker run -d -p 8888:8888 mvn-app mvn-app'
     }
    }
   catch (err) {
