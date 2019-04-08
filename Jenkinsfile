@@ -8,7 +8,7 @@ node {
       echo "Branch: ${env.BRANCH_NAME}"
       sh 'printenv'
     }
-    stage('Maven) {
+    stage('Maven') {
       sh 'mvn clen '
     }
     stage('run test') {  
