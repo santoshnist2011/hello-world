@@ -8,13 +8,13 @@ node {
       echo "Branch: ${env.BRANCH_NAME}"
       sh 'printenv'
     }
-    stage('Maven ){
+    stage('Maven ) {
       sh 'mvn clen '
     }
-    stage('run test'){
+    stage('run test') {  
      echo "hello"
     }
-    stage('Docker_Build'){
+    stage('Docker_Build') {
       echo "ddd"
     }
    }
