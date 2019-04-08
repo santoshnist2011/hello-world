@@ -1,5 +1,2 @@
-FROM tomcat:8.0.20-jre8
-
-RUN mkdir /usr/local/tomcat/webapps/myapp
-
-COPY hello-world /usr/local/tomcat/webapps/myapp/
+FROM tomcat:8-jre8
+ADD hello-wolr.war /usr/local/tomcat/webapps/
