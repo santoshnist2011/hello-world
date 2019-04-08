@@ -4,6 +4,7 @@ node {
       checkout scm
     }
     stage('Environment') {
+      echo "$USER"
       sh 'git --version'
       echo "Branch: ${env.BRANCH_NAME}"
       sh 'printenv'
