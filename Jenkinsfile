@@ -11,7 +11,7 @@ node {
     }
     stage('Maven') {
       sh 'mvn clean '
-      sh 'cp /opt/bitnami/apps/jenkins/jenkins_home/workspace/HelloWorld/dist/hello-world.war /home/bitnami/hello-world/'
+      sh 'cp /opt/bitnami/apps/jenkins/jenkins_home/workspace/HelloWorld/dist/hello-world.war /opt/bitnami/apps/jenkins/jenkins_home/workspace/HelloWorld'
     }
     stage('run test') {  
      sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent test'
